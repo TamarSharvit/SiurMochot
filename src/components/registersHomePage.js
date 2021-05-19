@@ -1,42 +1,44 @@
 import React from 'react';
+import '../css/registersHomePage.css';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import {useHistory} from 'react-router-dom';
 
 function RegistersHomePage(){
-    return <div>
-        <div>
-           <lable>פניה חדשה</lable>
-           <lable>מספר זהות
-               <input></input>
-           </lable>
+    const history = useHistory();
+    const handleClick = () => {
+        history.push("/courses");
+    }
+    return <div className="div1">
+        <div className="div2">
+     <h2>פניה חדשה</h2>
            <br></br>
 
-             <lable>מספר זהות
-               <input></input>
-           </lable>
+           <TextField id="outlined-basic" label="מספר זהות" variant="outlined" />
            <br></br>   
-           <lable>שם פרטי
-               <input></input>
-           </lable>
+           <TextField id="outlined-basic" label="שם פרטי" variant="outlined" />
            <br></br>   
-           <lable>שם משפחה
-               <input></input>
-           </lable>
+           <TextField id="outlined-basic" label="שם משפחה" variant="outlined" />
            <br></br>   
-           <lable>מייל
-               <input></input>
-           </lable>
+           <TextField id="outlined-basic" label="מייל" variant="outlined" />
            <br></br>   
-           <lable>שם הקורס
-               <input></input>
-           </lable>
+           <TextField id="outlined-basic" label="שם הקורס" variant="outlined" />
            <br></br>  
-           <lable>מקור פרסום
-               <input></input>
-           </lable>
+           <TextField id="outlined-basic" label="מקור פרסום" variant="outlined" />
            <br></br>        
             
             <br></br>
-
+          </div>
+        
+      <div className="div3">
+            <h2>טיפול בפניה קיימת</h2>
+            <br></br>   
+  
+            <TextField id="standard-search" label="חיפוש תלמידה" type="search" />
+           <br></br>  
         </div>
+
+        <Button variant="contained" color="default" onClick={handleClick}>לדף הקורסים</Button>   
     </div>
 
 }

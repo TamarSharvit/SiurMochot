@@ -1,0 +1,19 @@
+.div1{
+
+    display: flex;
+    
+
+
+}
+.div2{ 
+
+    flex: 50%;
+    text-align: center;
+
+
+}
+.div3{ 
+
+    flex: 50%;
+    text-align: center;
+}
