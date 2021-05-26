@@ -39,6 +39,7 @@ function RegistersHomePage(){
         </div>
 
         <Button variant="contained" color="default" onClick={handleClick}>לדף הקורסים</Button>   
+        <Button variant="contained" color="default" onClick={handleClick}>לסטטיסטיקות וגרפים</Button> 
     </div>
 
 }

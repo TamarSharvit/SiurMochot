@@ -5,7 +5,7 @@ import List from '@material-ui/core/List';
 import { makeStyles } from '@material-ui/core/styles';
 
 const Mylist = () => {
-  const studets = ['a', 'b', 'c', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+  const studets = ['a', 'b', 'c'];
   return (studets.map((student => <List>{student}</List>
   )));
 }
