@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ValidateTextField from '../common/validateTextFields';
-
+import {loginToServer} from '../api/loginApi';
 const Login = () => {
     const history = useHistory();
     const handleClick = () => {
+        loginToServer();
+     
         history.push("/registersHomePage");
     }
     const [userName, setUserName] = useState('');
