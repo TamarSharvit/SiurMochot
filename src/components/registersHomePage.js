@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/registersHomePage.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import ValidateTextField from '../common/validateTextFields';
 import {useHistory} from 'react-router-dom';
 
 function RegistersHomePage(){
@@ -13,12 +14,21 @@ function RegistersHomePage(){
     const handleClick2 = () => {
         history.push("/statistics");
     }
+
+    const [tz, setTz] = useState('');
+ 
+
     return <div className="div1">
         <div className="div2">
      <h2>פניה חדשה</h2>
            <br></br>
+           <div>מספר זהות</div>
+        <ValidateTextField value={tz}
+            onChange={(value) => setTz(value)}
+            validate={() => { return tz === '' }}
+            errorMessage={'שדה חובה'} />
 
-           <TextField id="outlined-basic" label="מספר זהות" variant="outlined" />
+           {/* <TextField id="outlined-basic" label="מספר זהות" variant="outlined" /> */}
            <br></br>   
            <TextField id="outlined-basic" label="שם פרטי" variant="outlined" />
            <br></br>   
