@@ -3,6 +3,7 @@ import RegistersHomePage from './components/registersHomePage.js';
 import Courses from './components/courses.js'
 import './App.css';
 import Login from './components/login.js';
+import Statistics from './components/statistics.js';
 import { Switch, BrowserRouter as Router,  Route } from 'react-router-dom';
 
 function App() {
@@ -17,9 +18,13 @@ function App() {
           <Login />
         </Route>
         <Route path="/courses">
-          <Courses/>
+          <Courses/> 
+          </Route>
+        <Route path="/statistics">
+          <Statistics/>
+          </Route>
 
-        </Route>
+       
 
       </Switch>
     </Router>

@@ -9,6 +9,10 @@ function RegistersHomePage(){
     const handleClick = () => {
         history.push("/courses");
     }
+
+    const handleClick2 = () => {
+        history.push("/statistics");
+    }
     return <div className="div1">
         <div className="div2">
      <h2>פניה חדשה</h2>
@@ -39,7 +43,7 @@ function RegistersHomePage(){
         </div>
 
         <Button variant="contained" color="default" onClick={handleClick}>לדף הקורסים</Button>   
-        <Button variant="contained" color="default" onClick={handleClick}>לסטטיסטיקות וגרפים</Button> 
+        <Button variant="contained" color="default" onClick={handleClick2}>לסטטיסטיקות וגרפים</Button> 
     </div>
 
 }

@@ -11,12 +11,12 @@
 //   )));
 // }
 // export default Mylist;
-const Mylist = () => {
-  const studets = ['a', 'b', 'c'];
-  return (studets.map((student => <List>{student}</List>
-  )));
-}
-export default Mylist;
+// const Mylist = () => {
+//   const studets = ['a', 'b', 'c'];
+//   return (studets.map((student => <List>{student}</List>
+//   )));
+// }
+// export default Mylist;
 
 // const VirtualizedList = () => {
 
