@@ -16,6 +16,7 @@ function RegistersHomePage(){
     }
 
     const [tz, setTz] = useState('');
+    const [fName, setFName] = useState('');
  
 
     return <div className="div1">
@@ -30,15 +31,40 @@ function RegistersHomePage(){
 
            {/* <TextField id="outlined-basic" label="מספר זהות" variant="outlined" /> */}
            <br></br>   
-           <TextField id="outlined-basic" label="שם פרטי" variant="outlined" />
+           {/* <TextField id="outlined-basic" label="שם פרטי" variant="outlined" /> */}
+           <div>שם פרטי </div>
+           <ValidateTextField value={fName}
+            onChange={(value) => setFName(value)}
+            validate={() => { return fName === '' }}
+            errorMessage={'שדה חובה'} />
            <br></br>   
-           <TextField id="outlined-basic" label="שם משפחה" variant="outlined" />
+           {/* <TextField id="outlined-basic" label="שם משפחה" variant="outlined" /> */}
+           <div>שם משפחה </div>
+           <ValidateTextField value={fName}
+            onChange={(value) => setFName(value)}
+            validate={() => { return fName === '' }}
+            errorMessage={'שדה חובה'} />
            <br></br>   
-           <TextField id="outlined-basic" label="מייל" variant="outlined" />
+           {/* <TextField id="outlined-basic" label="מייל" variant="outlined" /> */}
+           <div>מייל</div>
+           <ValidateTextField value={fName}
+            onChange={(value) => setFName(value)}
+            validate={() => { return fName === '' }}
+            errorMessage={'שדה חובה'} />
            <br></br>   
-           <TextField id="outlined-basic" label="שם הקורס" variant="outlined" />
+           {/* <TextField id="outlined-basic" label="שם הקורס" variant="outlined" /> */}
+           <div>שם הקורס </div>
+           <ValidateTextField value={fName}
+            onChange={(value) => setFName(value)}
+            validate={() => { return fName === '' }}
+            errorMessage={'שדה חובה'} />
            <br></br>  
-           <TextField id="outlined-basic" label="מקור פרסום" variant="outlined" />
+           {/* <TextField id="outlined-basic" label="מקור פרסום" variant="outlined" /> */}
+           <div>מקור פרסום</div>
+           <ValidateTextField value={fName}
+            onChange={(value) => setFName(value)}
+            validate={() => { return fName === '' }}
+            errorMessage={'שדה חובה'} />
            <br></br>        
             
             <br></br>
@@ -52,8 +78,8 @@ function RegistersHomePage(){
            <br></br>  
         </div>
 
-        <Button variant="contained" color="default" onClick={handleClick}>לדף הקורסים</Button>   
-        <Button variant="contained" color="default" onClick={handleClick2}>לסטטיסטיקות וגרפים</Button> 
+        <Button className="button" variant="contained" color="default" onClick={handleClick}>לדף הקורסים</Button>   
+        <Button  className="button" variant="contained" color="default" onClick={handleClick2}>לסטטיסטיקות וגרפים</Button> 
     </div>
 
 }

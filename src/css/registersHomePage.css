@@ -17,3 +17,6 @@
     flex: 50%;
     text-align: center;
 }
+.button{
+    height: fit-content;
+}
