@@ -11,12 +11,15 @@ const Modala = (props) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+           
         },
         paper: {
             backgroundColor: theme.palette.background.paper,
             border: '2px solid #000',
             boxShadow: theme.shadows[5],
             padding: theme.spacing(2, 4, 3),
+            height: 600,
+            width:500,
         },
     }));
     const classes = useStyles();
@@ -32,7 +35,7 @@ const Modala = (props) => {
     return (
         <div>
             <button type="button" onClick={handleOpen}>
-                לפרטי הקורס
+               {props.course.name} 
           </button>
             <Modal
                 aria-labelledby="transition-modal-title"
@@ -50,7 +53,8 @@ const Modala = (props) => {
                     <div className={classes.paper}>
                         <h2 id="transition-modal-title">{props.course.name}</h2>
                         <p id="transition-modal-description">{props.course.details}</p><br></br>
-                        <Mylist/>
+                        <Mylist/> 
+                       
                     </div>
                 </Fade>
             </Modal>
