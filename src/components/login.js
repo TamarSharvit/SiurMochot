@@ -2,13 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ValidateTextField from '../common/validateTextFields';
-import {loginToServer} from '../api/loginApi';
+import { loginToServer } from '../api/loginApi';
+
 const Login = () => {
     const history = useHistory();
     const handleClick = () => {
-        loginToServer();
-     
-        history.push("/registersHomePage");
+        //Validation - if email and pwd are VALID 
+        loginToServer()/*send params*/.then((res) => {
+            //save token
+            history.push("/registersHomePage");
+        }).catch(() => {
+            //Handle error
+        })
+
     }
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
@@ -26,7 +32,7 @@ const Login = () => {
             onChange={(value) => setPassword(value)}
             validate={() => { return password.length < 6 }}
             errorMessage={'חייב להכיל לפחות 6 תוים'} />
-<br/>
+        <br />
         <Button variant="contained" color="primary" onClick={handleClick}>כניסה</Button>
     </div>)
 
