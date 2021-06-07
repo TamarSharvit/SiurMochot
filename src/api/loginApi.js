@@ -6,7 +6,7 @@ export const loginToServer = (userName, password) => {
         .then((data) => {
             console.log(data);
             return data;
-        }
+           }
         )
         .catch((err) => {
             console.log("error", err);

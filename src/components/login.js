@@ -5,10 +5,16 @@ import ValidateTextField from '../common/validateTextFields';
 import { loginToServer } from '../api/loginApi';
 
 const Login = () => {
+    const cheackValidName=()=>{
+        return userName === ''; 
+    }
+    const cheackValidPass=()=>{
+        return password.length < 6 ;
+    }
     const history = useHistory();
     const handleClick = () => {
-        //Validation - if email and pwd are VALID 
-        loginToServer()/*send params*/.then((res) => {
+        if(!(cheackValidName()&&cheackValidPass())){
+        loginToServer(userName, password)/*send params*/.then((res) => {
             //save token
             history.push("/registersHomePage");
         }).catch(() => {
@@ -16,6 +22,8 @@ const Login = () => {
         })
 
     }
+}
+
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
@@ -23,17 +31,19 @@ const Login = () => {
         <div>שם משתמש</div>
         <ValidateTextField value={userName}
             onChange={(value) => setUserName(value)}
-            validate={() => { return userName === '' }}
+            validate={cheackValidName}
             errorMessage={'שדה חובה'} />
         <br />
 
         <div>סיסמה</div>
         <ValidateTextField value={password}
             onChange={(value) => setPassword(value)}
-            validate={() => { return password.length < 6 }}
+            validate={cheackValidPass}
             errorMessage={'חייב להכיל לפחות 6 תוים'} />
         <br />
         <Button variant="contained" color="primary" onClick={handleClick}>כניסה</Button>
+        <br/>
+        <Button variant="contained" color="default" onClick={handleClick}>משתמש חדש</Button>
     </div>)
 
 
