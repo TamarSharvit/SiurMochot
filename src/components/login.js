@@ -2,22 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ValidateTextField from '../common/validateTextFields';
-import { loginToServer } from '../api/loginApi';
+import { loginToServer, signup } from '../api/loginApi';
 
 const Login = () => {
+
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    
     const history = useHistory();
     const handleClick = () => {
         //Validation - if email and pwd are VALID 
-        loginToServer()/*send params*/.then((res) => {
-            //save token
+        signup(userName, password).then((res) => {
+            debugger
             history.push("/registersHomePage");
         }).catch(() => {
             //Handle error
         })
-
     }
-    const [userName, setUserName] = useState('');
-    const [password, setPassword] = useState('');
+
 
     return (<div>
         <div>שם משתמש</div>
