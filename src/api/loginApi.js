@@ -15,12 +15,12 @@ export const loginToServer = (userName, password) => {
 
 }
 
-export const signup = (userName, password) => {
+export const signup = (id, fName, lName, email, password) => {
     debugger;
     return fetch(`http://localhost:4000/signup`, {
         method: 'POST', // or 'PUT'
 
-        body: { userName: userName, password: password }
+        body: { id, fName, lName, email, password }
     })
         .then(() => { debugger; console.log("you singup") })
         .catch((err) => {

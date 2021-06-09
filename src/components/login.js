@@ -3,19 +3,14 @@ import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ValidateTextField from '../common/validateTextFields';
 import { loginToServer, signup } from '../api/loginApi';
+import Link from '@material-ui/core/Link';
+import NewUser from './newUser.js';
 
 const Login = () => {
-<<<<<<< HEAD
 
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    
-    const history = useHistory();
-    const handleClick = () => {
-        //Validation - if email and pwd are VALID 
-        signup(userName, password).then((res) => {
-            debugger
-=======
+            
     const cheackValidName=()=>{
         return userName === ''; 
     }
@@ -27,20 +22,18 @@ const Login = () => {
         if(!(cheackValidName()&&cheackValidPass())){
         loginToServer(userName, password)/*send params*/.then((res) => {
             //save token
->>>>>>> 29a46d235a416515bf0d36748734d9e9f60e5320
             history.push("/registersHomePage");
         }).catch(() => {
             //Handle error
         })
     }
-<<<<<<< HEAD
 
-=======
 }
 
-    const [userName, setUserName] = useState('');
-    const [password, setPassword] = useState('');
->>>>>>> 29a46d235a416515bf0d36748734d9e9f60e5320
+     const handleClickSignup = () => {
+        history.push("/NewUser");
+     }
+
 
     return (<div>
         <div>שם משתמש</div>
@@ -58,10 +51,22 @@ const Login = () => {
         <br />
         <Button variant="contained" color="primary" onClick={handleClick}>כניסה</Button>
         <br/>
-        <Button variant="contained" color="default" onClick={handleClick}>משתמש חדש</Button>
+        {/* <Button variant="contained" color="default" onClick={handleClick}>משתמש חדש</Button> */}
+        <Link
+              component="button"
+              variant="body2"
+              onClick={handleClickSignup} 
+            > משתמש חדש
+          </Link>    
+           
     </div>)
+        }
 
+        
+        
+        
+         
+          
+        
 
-}
 export default Login;
-
