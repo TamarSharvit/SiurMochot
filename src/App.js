@@ -7,6 +7,8 @@ import Login from './components/login.js';
 import Statistics from './components/statistics.js';
 import { Switch, BrowserRouter as Router,  Route } from 'react-router-dom';
 import NewRegister from './components/newRegister.js';
+import AreaOfInterest from './components/areaOfInterest.js';
+import Reporting from './components/reporting.js';
 function App() {
   return (<div>
 
@@ -29,6 +31,12 @@ function App() {
           </Route>
           <Route path="/newRegister">
           <NewRegister/>
+          </Route>
+          <Route path="/areaOfInterest">
+          <AreaOfInterest/>
+          </Route>
+          <Route path="/reporting">
+          <Reporting/>
           </Route>
        
 

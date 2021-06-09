@@ -8,12 +8,16 @@ import NewRegister from './newRegister.js';
 function RegistersHomePage() {
 
     const history = useHistory();
-    const handleClick = () => {
+    const handleClick1 = () => {
         history.push("/newRegister");
     }
 
     const handleClick2 = () => {
-        history.push("/statistics");
+        history.push("/areaOfInterest");
+    }
+
+    const handleClick3 = () => {
+        history.push("/reporting");
     }
 
     
@@ -22,16 +26,17 @@ function RegistersHomePage() {
     return <div className="div1">
        
 
-        <div className="div3">
+        {/* <div className="div3">
             <h2>טיפול בפניה קיימת</h2>
             <br></br>
 
             <TextField id="standard-search" label="חיפוש תלמידה" type="search" />
             <br></br>
-        </div>
+        </div> */}
 
-        <Button className="button" variant="contained" color="default" onClick={handleClick}>הוספת תלמידה</Button>
-        <Button className="button" variant="contained" color="default" onClick={handleClick2}>לסטטיסטיקות וגרפים</Button>
+        <Button className="button" variant="contained" color="default" onClick={<NewRegister/>}>פרטי תלמידה</Button>
+        <Button className="button" variant="contained" color="default" onClick={handleClick2}>תחום התענינות</Button>
+        <Button className="button" variant="contained" color="default" onClick={handleClick3}>דיווח</Button>
     </div>
 
 }
