@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/registersHomePage.css';
+import '../css/newRegister.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
@@ -24,7 +25,7 @@ const NewRegister=()=>{
 
     return<div>
     <div className="div2">
-    <h2>פרטי תלמידה</h2>
+    <h2 className="title">פרטי תלמידה</h2>
    
     <ValidateTextField value={id}
         onChange={(value) => setId(value)}

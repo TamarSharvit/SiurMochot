@@ -8,8 +8,7 @@
 .div2{ 
 
     flex: 50%;
-    text-align: center;
-
+    
 
 }
 .div3{ 
@@ -19,4 +18,13 @@
 }
 .button{
     height: fit-content;
+}
+.add{
+    text-align: right;
+    margin: 50px;
+  
+    float: right;
+    /* column-count: 3; */
+    /* column-rule: 4px double #ff00ff; */
+    
 }

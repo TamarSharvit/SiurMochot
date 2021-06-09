@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/registersHomePage.css';
+import '../css/newRegister.css'
 import ValidateTextField from '../common/validateTextFields';
 
 
