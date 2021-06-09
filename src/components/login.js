@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ValidateTextField from '../common/validateTextFields';
 import { loginToServer, signup } from '../api/loginApi';
+import Link from '@material-ui/core/Link';
+import NewUser from './newUser.js';
 
 const Login = () => {
 
@@ -14,11 +16,30 @@ const Login = () => {
         //Validation - if email and pwd are VALID 
         signup(userName, password).then((res) => {
             debugger
+            
+    const cheackValidName=()=>{
+        return userName === ''; 
+    }
+    const cheackValidPass=()=>{
+        return password.length < 6 ;
+    }
+    const history = useHistory();
+    const handleClick = () => {
+        if(!(cheackValidName()&&cheackValidPass())){
+        loginToServer(userName, password)/*send params*/.then((res) => {
+            //save token
             history.push("/registersHomePage");
         }).catch(() => {
             //Handle error
         })
     }
+
+}
+
+     const handleClickSignup = () => {
+        history.push("/NewUser");
+     }
+
 
     return (<div>
         <div>שם משתמש</div>
@@ -36,10 +57,22 @@ const Login = () => {
         <br />
         <Button variant="contained" color="primary" onClick={handleClick}>כניסה</Button>
         <br/>
-        <Button variant="contained" color="default" onClick={handleClick}>משתמש חדש</Button>
+        {/* <Button variant="contained" color="default" onClick={handleClick}>משתמש חדש</Button> */}
+        <Link
+              component="button"
+              variant="body2"
+              onClick={handleClickSignup} 
+            > משתמש חדש
+          </Link>    
+           
     </div>)
+        }
 
+        
+        
+        
+         
+          
+        
 
-}
 export default Login;
-
