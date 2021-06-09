@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -10,35 +11,31 @@ const Login = () => {
 
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    
+
     const history = useHistory();
-    const handleClick = () => {
-        //Validation - if email and pwd are VALID 
-        signup(userName, password).then((res) => {
-            debugger
-            
-    const cheackValidName=()=>{
-        return userName === ''; 
-    }
-    const cheackValidPass=()=>{
-        return password.length < 6 ;
-    }
-    const history = useHistory();
-    const handleClick = () => {
-        if(!(cheackValidName()&&cheackValidPass())){
-        loginToServer(userName, password)/*send params*/.then((res) => {
-            //save token
-            history.push("/registersHomePage");
-        }).catch(() => {
-            //Handle error
-        })
+
+    const cheackValidName = () => {
+        return userName === '';
     }
 
-}
+    const cheackValidPass = () => {
+        return password.length < 6;
+    }
 
-     const handleClickSignup = () => {
+    const handleClick = () => {
+        if (!(cheackValidName() && cheackValidPass())) {
+            loginToServer(userName, password)/*send params*/.then((res) => {
+                //save token
+                history.push("/registersHomePage");
+            }).catch(() => {
+                //Handle error
+            })
+        }
+    }
+
+    const handleClickSignup = () => {
         history.push("/NewUser");
-     }
+    }
 
 
     return (<div>
@@ -56,23 +53,16 @@ const Login = () => {
             errorMessage={'חייב להכיל לפחות 6 תוים'} />
         <br />
         <Button variant="contained" color="primary" onClick={handleClick}>כניסה</Button>
-        <br/>
+        <br />
         {/* <Button variant="contained" color="default" onClick={handleClick}>משתמש חדש</Button> */}
         <Link
-              component="button"
-              variant="body2"
-              onClick={handleClickSignup} 
-            > משתמש חדש
-          </Link>    
-           
-    </div>)
-        }
+            component="button"
+            variant="body2"
+            onClick={handleClickSignup}
+        > משתמש חדש
+          </Link>
 
-        
-        
-        
-         
-          
-        
+    </div>)
+}
 
 export default Login;

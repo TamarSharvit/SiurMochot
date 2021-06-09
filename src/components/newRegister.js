@@ -5,8 +5,9 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
 import ValidateTextField from '../common/validateTextFields';
+import { addToData } from '../api/newRegisterApi';
 
-const NewRegister=()=>{
+const NewRegister=(props)=>{
     //פרטי תלמידה
     const [id, setId] = useState('');
     const [fName, setFName] = useState('');
@@ -20,8 +21,12 @@ const NewRegister=()=>{
     const [hebrowBirthDate, setHebrowBirthDate] = useState('');
     const [note, setNote] = useState('');
 
+    const handleClick = () => {
+        addToData(id, fName, lName, email, phone, sex, leadSource, additionalPhone, foreignBirthDate , hebrowBirthDate, note )
+        props.setShowNewUser(false);
 
-  
+       
+    }
 
     return<div>
     <div className="div2">
@@ -107,8 +112,10 @@ const NewRegister=()=>{
         validate={() => { return note === '' }}
         errorMessage={'שדה חובה'}
         lable={"הערה"} /> 
-</div>
+       
 
+</div>
+<Button variant="contained" color="primary" onClick={handleClick}>הוספה למערכת</Button>
 
 </div> }
 export default NewRegister;

@@ -5,17 +5,18 @@ import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
 import ValidateTextField from '../common/validateTextFields';
 import NewRegister from './newRegister.js';
-
+import AreaofInterest from './areaOfInterest.js';
+import Reporting from './reporting.js';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-import EditIcon from '@material-ui/icons/Edit';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import NavigationIcon from '@material-ui/icons/Navigation';
+
 function RegistersHomePage() {
 
-
+    const[showNewUser, setShowNewUser]=useState(false);
+    const[showInterest, setShowInterest]=useState(false);
+    const[reporting, setreporting]=useState(false);
     const useStyles = makeStyles((theme) => ({
         root: {
           '& > *': {
@@ -29,18 +30,18 @@ function RegistersHomePage() {
 
       const classes = useStyles();
 
-    const history = useHistory();
-    const handleClick1 = () => {
-        history.push("/newRegister");
-    }
+    // const history = useHistory();
+    // const handleClick1 = () => {
+    //     history.push("/newRegister");
+    // }
 
-    const handleClick2 = () => {
-        history.push("/areaOfInterest");
-    }
+    // const handleClick2 = () => {
+    //     history.push("/areaOfInterest");
+    // }
 
-    const handleClick3 = () => {
-        history.push("/reporting");
-    }
+    // const handleClick3 = () => {
+    //     history.push("/reporting");
+    // }
 
     
 
@@ -51,21 +52,23 @@ function RegistersHomePage() {
         
        <lable>פרטי תלמידה</lable>
         <Fab color="primary" aria-label="add">
-        <AddIcon onClick={handleClick1}/>
+        <AddIcon onClick={()=>{setShowNewUser(true)}}/>
       </Fab>
+     {showNewUser&&<NewRegister setShowNewUser={setShowNewUser}/>} 
       
        <br></br><br></br>
      <lable>תחום התענינות</lable>
         <Fab color="primary" aria-label="add">
-        <AddIcon onClick={handleClick2}/>
+        <AddIcon onClick={()=>{setShowInterest(true)}}/>
       </Fab>
- 
+      {showInterest&&<AreaofInterest setShowInterest={setShowInterest}/>} 
+
         <br></br><br></br>
       <lable>דיווח</lable>
         <Fab color="primary" aria-label="add">
-        <AddIcon onClick={handleClick3}/>
+        <AddIcon onClick={()=>{setreporting(true)}}/>
       </Fab>
-      
+       {reporting&&<Reporting setreporting={setreporting}/>} 
         <br></br>
     </div>
 

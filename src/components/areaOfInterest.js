@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import '../css/registersHomePage.css';
 import '../css/newRegister.css'
 import ValidateTextField from '../common/validateTextFields';
-
-
-const AreaOfInterest=()=>{
+import Button from '@material-ui/core/Button';
+import { addToData } from '../api/newRegisterApi';
+const AreaOfInterest=(props)=>{
       //תחום התענינות
       const [priceDiscount, setPriceDiscount] = useState('');
       const [discount, setDiscount] = useState('');
@@ -12,6 +12,12 @@ const AreaOfInterest=()=>{
       const [modol, setModol] = useState('');
       const [course, setCourse] = useState('');
       const [status, setStatus] = useState('');
+
+      const handleClick = () => {
+              addToData()
+              props.setShowInterest(false);
+       
+}
 
       return <div className="div2">
       <h2>תחום התענינות</h2>
@@ -51,7 +57,7 @@ const AreaOfInterest=()=>{
           validate={() => { return status === '' }}
           errorMessage={'שדה חובה'} 
           lable={"סטטוס"}/>
-  
+  <Button variant="contained" color="primary" onClick={handleClick}>הוספה למערכת</Button>
   </div>
   
   

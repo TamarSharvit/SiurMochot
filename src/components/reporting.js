@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import '../css/registersHomePage.css';
 import Button from '@material-ui/core/Button';
 
-const AreaOfInterest=()=>{
+const AreaOfInterest=(props)=>{
   const handleClick=()=>{
+  
+    
+  }
+  const handleClick2=()=>{
+    props.setreporting(false)
     
   }
 
@@ -20,7 +25,8 @@ const AreaOfInterest=()=>{
          <Button className="button" variant="contained" color="default" onClick={handleClick}>אין מענה</Button>
          <Button className="button" variant="contained" color="default" onClick={handleClick}>לקראת סגירה</Button>
          <Button className="button" variant="contained" color="default" onClick={handleClick}>בטיפול</Button>
-
+         <br></br>
+         <Button variant="contained" color="primary" onClick={handleClick2}>הוספה למערכת</Button>
   </div>
   
   

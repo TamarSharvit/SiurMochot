@@ -16,7 +16,7 @@ const NewUser=()=>{
     
     const handleClick = () => {
         if(!(cheackValidation(id)&&cheackValidation(fName)&&cheackValidation(lName)&&cheackValidation(email)&&cheackValidation(password))){
-              signup = (id, fName, lName, email, password);
+            signup(id, fName, lName, email, password);
         }
     }
 
