@@ -14,7 +14,7 @@ const AreaOfInterest=(props)=>{
       const [status, setStatus] = useState('');
 
       const handleClick = () => {
-              addToData()
+        //       addToData()
               props.setShowInterest(false);
        
 }

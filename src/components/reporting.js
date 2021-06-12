@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import '../css/registersHomePage.css';
 import Button from '@material-ui/core/Button';
-
+import TextArea from './textArea.js'; 
+import SwitchButton from './switchButton';
 const AreaOfInterest=(props)=>{
   const handleClick=()=>{
   
@@ -26,6 +27,11 @@ const AreaOfInterest=(props)=>{
          <Button className="button" variant="contained" color="default" onClick={handleClick}>לקראת סגירה</Button>
          <Button className="button" variant="contained" color="default" onClick={handleClick}>בטיפול</Button>
          <br></br>
+
+         <TextArea text="פירוט דיווח"/>
+         <br></br>
+         <lable>חוזה</lable>
+         <SwitchButton/>
          <Button variant="contained" color="primary" onClick={handleClick2}>הוספה למערכת</Button>
   </div>
   
@@ -33,3 +39,7 @@ const AreaOfInterest=(props)=>{
 }
 
 export default AreaOfInterest;
+
+
+
+

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import '../css/registersHomePage.css';
+// import '../css/registersHomePage.css';
 import '../css/newRegister.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
 import ValidateTextField from '../common/validateTextFields';
-import { addToData } from '../api/newRegisterApi';
-
+import { addRegisterToData } from '../api/newRegisterApi';
+import TextArea from './textArea.js';
 const NewRegister=(props)=>{
     //פרטי תלמידה
     const [id, setId] = useState('');
@@ -22,7 +22,7 @@ const NewRegister=(props)=>{
     const [note, setNote] = useState('');
 
     const handleClick = () => {
-        addToData(id, fName, lName, email, phone, sex, leadSource, additionalPhone, foreignBirthDate , hebrowBirthDate, note )
+        addRegisterToData(id, fName, lName, email, phone, sex, leadSource, additionalPhone, foreignBirthDate , hebrowBirthDate, note );
         props.setShowNewUser(false);
 
        
@@ -30,7 +30,7 @@ const NewRegister=(props)=>{
 
     return<div>
     <div className="div2">
-    <h2 className="title">פרטי תלמידה</h2>
+    <h2>פרטי תלמידה</h2>
    
     <ValidateTextField value={id}
         onChange={(value) => setId(value)}
@@ -113,6 +113,7 @@ const NewRegister=(props)=>{
         errorMessage={'שדה חובה'}
         lable={"הערה"} /> 
        
+       <TextArea text="הערה"/>
 
 </div>
 <Button variant="contained" color="primary" onClick={handleClick}>הוספה למערכת</Button>

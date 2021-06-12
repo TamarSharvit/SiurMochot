@@ -1,5 +1,5 @@
 
-
+import React from 'react';
 
 export const addRegisterToData = ( id, fName, lName, email, phone, sex, leadSource, additionalPhone, foreignBirthDate , hebrowBirthDate, note) => {
     debugger;
@@ -7,7 +7,7 @@ export const addRegisterToData = ( id, fName, lName, email, phone, sex, leadSour
         method: 'POST', 
         body: {  id, fName, lName, email, phone, sex, leadSource, additionalPhone, foreignBirthDate , hebrowBirthDate, note }
     })
-        .then(() => { debugger; console.log("you add") })
+        .then(() => {console.log("you add") })
         .catch((err) => {
             console.log(err);
         })

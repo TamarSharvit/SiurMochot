@@ -6,7 +6,7 @@ import ValidateTextField from '../common/validateTextFields';
 import { loginToServer, signup } from '../api/loginApi';
 import Link from '@material-ui/core/Link';
 import NewUser from './newUser.js';
-
+import login from '../css/login.css';
 const Login = () => {
 
     const [userName, setUserName] = useState('');
@@ -38,7 +38,7 @@ const Login = () => {
     }
 
 
-    return (<div>
+    return (<div className="body">
         <div>שם משתמש</div>
         <ValidateTextField value={userName}
             onChange={(value) => setUserName(value)}
