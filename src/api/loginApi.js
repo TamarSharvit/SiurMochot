@@ -7,7 +7,7 @@ export const loginToServer = (userName, password) => {
         .then((data) => {
             console.log(data);
             return data;
-           }
+        }
         )
         .catch((err) => {
             console.log("error", err);
@@ -16,11 +16,14 @@ export const loginToServer = (userName, password) => {
 }
 
 export const signup = (id, fName, lName, email, password) => {
+    console.log(id, fName, lName, email, password)
     debugger;
-    return fetch(`http://localhost:4000/signup`, {
+    return fetch(`http://localhost:4000/users/signup`, {
         method: 'POST', // or 'PUT'
-
-        body: { id, fName, lName, email, password }
+        headers: {
+            'Content-Type': 'application/json'
+          },
+        body: JSON.stringify({ id, fName, lName, email, password })
     })
         .then(() => { debugger; console.log("you singup") })
         .catch((err) => {
