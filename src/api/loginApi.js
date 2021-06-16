@@ -1,7 +1,7 @@
 import React from "react";
 
-export const loginToServer = (userName, password) => {
-    return fetch(`http://localhost:4000/login/${userName}/${password}`)
+export const loginToServer = (email, password) => {
+    return fetch(`http://localhost:4000/users/login/${email}/${password}`)
 
         .then((res) => res.json())
         .then((data) => {

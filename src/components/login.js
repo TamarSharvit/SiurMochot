@@ -3,19 +3,19 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ValidateTextField from '../common/validateTextFields';
-import { loginToServer, signup } from '../api/loginApi';
+import { loginToServer} from '../api/loginApi';
 import Link from '@material-ui/core/Link';
 import NewUser from './newUser.js';
 import login from '../css/login.css';
 const Login = () => {
 
-    const [userName, setUserName] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const history = useHistory();
 
     const cheackValidName = () => {
-        return userName === '';
+        return email === '';
     }
 
     const cheackValidPass = () => {
@@ -24,10 +24,13 @@ const Login = () => {
 
     const handleClick = () => {
         if (!(cheackValidName() && cheackValidPass())) {
-            loginToServer(userName, password)/*send params*/.then((res) => {
+
+            loginToServer(email, password).then((res) => {
+                debugger;
                 //save token
                 history.push("/registersHomePage");
             }).catch(() => {
+                debugger
                 //Handle error
             })
         }
@@ -40,8 +43,8 @@ const Login = () => {
 
     return (<div className="body">
         <div>שם משתמש</div>
-        <ValidateTextField value={userName}
-            onChange={(value) => setUserName(value)}
+        <ValidateTextField value={email}
+            onChange={(value) => setEmail(value)}
             validate={cheackValidName}
             errorMessage={'שדה חובה'} />
         <br />
