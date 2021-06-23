@@ -31,6 +31,9 @@ const Login = () => {
                 //save token
                 if (res.status === 200)
                     history.push("/registersHomePage");
+                    else{
+                        alert("שם משתמש אינו קיים");
+                    }
             }).catch(() => {
                 // debugger
                 //Handle error

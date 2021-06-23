@@ -3,12 +3,14 @@ import '../css/registersHomePage.css';
 import Button from '@material-ui/core/Button';
 import TextArea from './textArea.js'; 
 import SwitchButton from './switchButton';
+import {addReportingToData} from '../api/newReporting'
 const AreaOfInterest=(props)=>{
   const handleClick=()=>{
   
     
   }
   const handleClick2=()=>{
+    // addReportingToData()
     props.setreporting(false)
     
   }
