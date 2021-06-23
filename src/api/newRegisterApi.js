@@ -1,9 +1,9 @@
 
-import React from 'react';
+
 
 export const addRegisterToData = ( id, fName, lName, email, phone, sex, leadSource, additionalPhone, foreignBirthDate , hebrowBirthDate, note) => {
     debugger;
-    return fetch(`http://localhost:4000/newRegisters/addRegisterToData`, {
+    return fetch(`http://localhost:4000/newRegister/addRegisterToData`, {
         method: 'POST', 
         headers: {
             'Content-Type': 'application/json'

@@ -1,8 +1,8 @@
 
 
-export const addInterestToData = (priceDiscount, discount, price, modol, course, status) => {
+export const areaOfInterest = (priceDiscount, discount, price, modol, course, status) => {
     debugger;
-    return fetch(`http://localhost:4000/newRegisters/addRegisterToData`, {
+    return fetch(`http://localhost:4000/areaOfInterest/addAreaOfInterest`, {
         method: 'POST', 
         headers: {
             'Content-Type': 'application/json'

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ValidateTextField from '../common/validateTextFields';
-import { loginToServer} from '../api/loginApi';
+import { loginToServer } from '../api/loginApi';
 import Link from '@material-ui/core/Link';
 import NewUser from './newUser.js';
 import login from '../css/login.css';
@@ -26,11 +26,13 @@ const Login = () => {
         if (!(cheackValidName() && cheackValidPass())) {
 
             loginToServer(email, password).then((res) => {
-                debugger;
+                console.log("res.status", res.status)
+                // debugger;
                 //save token
-                history.push("/registersHomePage");
+                if (res.status === 200)
+                    history.push("/registersHomePage");
             }).catch(() => {
-                debugger
+                // debugger
                 //Handle error
             })
         }

@@ -3,7 +3,7 @@ import '../css/registersHomePage.css';
 import '../css/newRegister.css'
 import ValidateTextField from '../common/validateTextFields';
 import Button from '@material-ui/core/Button';
-import { addToData } from '../api/newRegisterApi';
+import {areaOfInterest} from '../api/newAreaOfInterest'
 const AreaOfInterest=(props)=>{
       //תחום התענינות
       const [priceDiscount, setPriceDiscount] = useState('');
@@ -14,7 +14,7 @@ const AreaOfInterest=(props)=>{
       const [status, setStatus] = useState('');
 
       const handleClick = () => {
-        //       addToData()
+              areaOfInterest(priceDiscount, discount, price, modol, course, status);
               props.setShowInterest(false);
        
 }

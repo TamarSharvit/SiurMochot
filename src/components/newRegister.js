@@ -22,6 +22,7 @@ const NewRegister=(props)=>{
     const [note, setNote] = useState('');
 
     const handleClick = () => {
+        debugger;
         addRegisterToData(id, fName, lName, email, phone, sex, leadSource, additionalPhone, foreignBirthDate , hebrowBirthDate, note );
         props.setShowNewUser(false);
 
