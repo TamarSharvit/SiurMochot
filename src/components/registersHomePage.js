@@ -30,7 +30,7 @@ function RegistersHomePage() {
 
       const classes = useStyles();
 
-    // const history = useHistory();
+ 
     // const handleClick1 = () => {
     //     history.push("/newRegister");
     // }
@@ -42,12 +42,14 @@ function RegistersHomePage() {
     // const handleClick3 = () => {
     //     history.push("/reporting");
     // }
+    const history = useHistory();
+    const handleClick=()=>{
+      history.push("/maneger");
+    }
 
-    
-
+            {/* <TextField id="standard-search" label="חיפוש תלמידה" type="search" /> */}
 
     return <div className="add">
-            {/* <TextField id="standard-search" label="חיפוש תלמידה" type="search" /> */}
       
         
        <lable>פרטי תלמידה</lable>
@@ -69,7 +71,10 @@ function RegistersHomePage() {
         <AddIcon onClick={()=>{setreporting(true)}}/>
       </Fab>
        {reporting&&<Reporting setreporting={setreporting}/>} 
-        <br></br>
+        <br></br><br></br>
+        <Button variant="contained" color="primary" onClick={handleClick}> עריכת טבלאות- הרשאת מנהל</Button>
+
+      
     </div>
 
 }

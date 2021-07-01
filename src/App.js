@@ -1,6 +1,6 @@
 import React from 'react';
 import RegistersHomePage from './components/registersHomePage.js';
-import Courses from './components/courses.js';
+import Courses from './components/coursesLast.js';
 import NewUser from './components/newUser.js';
 import './App.css';
 import Login from './components/login.js';
@@ -9,6 +9,8 @@ import { Switch, BrowserRouter as Router,  Route } from 'react-router-dom';
 import NewRegister from './components/newRegister.js';
 import AreaOfInterest from './components/areaOfInterest.js';
 import Reporting from './components/reporting.js';
+import Maneger from './components/managerEditing.js';
+
 function App() {
   return (<div>
 
@@ -37,6 +39,9 @@ function App() {
           </Route>
           <Route path="/reporting">
           <Reporting/>
+          </Route>
+          <Route path="/maneger">
+          <Maneger/>
           </Route>
        
 
