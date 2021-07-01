@@ -7,8 +7,9 @@ import { loginToServer } from '../api/loginApi';
 import Link from '@material-ui/core/Link';
 import NewUser from './newUser.js';
 import login from '../css/login.css';
+import jwt_decode from 'jwt-decode';
 const Login = () => {
-
+   
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -26,9 +27,10 @@ const Login = () => {
         if (!(cheackValidName() && cheackValidPass())) {
 
             loginToServer(email, password).then((res) => {
-                console.log("res.status", res.status)
-                // debugger;
-                //save token
+               // console.log("res.status", res.status)
+               console.log("tokennn", res.token)
+                const decoded = jwt_decode(res.token)
+                localStorage.setItem("token",decoded);
                 if (res.status === 200)
                     history.push("/registersHomePage");
                     else{
