@@ -2,16 +2,15 @@ import React ,{useState}from 'react'
 import {courseDetails} from '../api/courseDetails'
 import Button from '@material-ui/core/Button';
 import ValidateTextField from '../common/validateTextFields';
-import { PanToolSharp } from '@material-ui/icons';
 
-const EditCourses=(props)=>{
-    const[name, setName]=useState("");
-    const[price, setPrice]=useState("");
+const Courses=(props)=>{
+    const[name, setName]=useState('');
+    const[price, setPrice]=useState('');
     
 
     const handleClick=()=>{
       courseDetails(name, price);
-      // props.setShowCourses=false;
+       props.setShowCourses(false);
       
     }
     return <div>
@@ -31,4 +30,4 @@ const EditCourses=(props)=>{
 
     </div>
 }
-export default EditCourses;
+export default Courses;

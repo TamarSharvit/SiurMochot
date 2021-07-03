@@ -1,8 +1,9 @@
 import React, { useState} from 'react';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
-
-import EditCourses from './courses.js';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Courses from './courses.js';
 import Models from './models.js';
 function Editmaneger(){
 
@@ -10,17 +11,18 @@ function Editmaneger(){
     const [showModel, setShowModel] = useState(false);
     
 
-    // const useStyles = makeStyles((theme) => ({
-    //     root: {
-    //       '& > *': {
-    //         margin: theme.spacing(1),
-    //       },
-    //     },
-    //     extendedIcon: {
-    //       marginRight: theme.spacing(1),
-    //     },
-    //   }));
-      // const classes = useStyles();
+    const useStyles = makeStyles((theme) => ({
+      root: {
+        '& > *': {
+          margin: theme.spacing(1),
+        },
+      },
+      extendedIcon: {
+        marginRight: theme.spacing(1),
+      },
+    }));
+
+    const classes = useStyles();
    return <div className="add">
       
         
@@ -28,7 +30,7 @@ function Editmaneger(){
      <Fab color="primary" aria-label="add">
      <AddIcon onClick={()=>{setShowCourses(true)}}/>
    </Fab>
-  {showCourses&&<EditCourses setShowCourses={setShowCourses}/>} 
+  {showCourses&&<Courses setShowCourses={setShowCourses}/>} 
    
     <br></br><br></br>
   <lable>עריכת טבלת מודל הקורסים</lable>
