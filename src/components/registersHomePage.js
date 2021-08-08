@@ -50,8 +50,8 @@ function RegistersHomePage() {
             {/* <TextField id="standard-search" label="חיפוש תלמידה" type="search" /> */}
 
     return <div className="add">
-      
-        
+  
+       <button className="b"></button>
        <lable>פרטי תלמידה</lable>
         <Fab color="primary" aria-label="add">
         <AddIcon onClick={()=>{setShowNewUser(true)}}/>
@@ -73,7 +73,6 @@ function RegistersHomePage() {
        {reporting&&<Reporting setreporting={setreporting}/>} 
         <br></br><br></br>
         <Button variant="contained" color="primary" onClick={handleClick}> עריכת טבלאות- הרשאת מנהל</Button>
-
       
     </div>
 
