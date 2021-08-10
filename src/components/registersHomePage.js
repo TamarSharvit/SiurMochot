@@ -7,7 +7,6 @@ import ValidateTextField from '../common/validateTextFields';
 import NewRegister from './newRegister.js';
 import AreaofInterest from './areaOfInterest.js';
 import Reporting from './reporting.js';
-
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
@@ -51,8 +50,10 @@ function RegistersHomePage() {
 
     return <div className="add">
   
-       <button className="b"></button>
-       <lable>פרטי תלמידה</lable>
+       {/* <div className="b">
+         <button className="buttonB"></button>
+       </div> */}
+       <lable>פרטים אישיים</lable>
         <Fab color="primary" aria-label="add">
         <AddIcon onClick={()=>{setShowNewUser(true)}}/>
       </Fab>

@@ -30,14 +30,15 @@ const NewRegister=(props)=>{
     }
 
     return<div>
+       <div className="div1">
     <div className="div2">
-    <h2>פרטי תלמידה</h2>
+    
    
     <ValidateTextField value={id}
         onChange={(value) => setId(value)}
         validate={() => { return id === '' }}
         errorMessage={'שדה חובה'} 
-        lable={"תעודת זהות"}/>
+        lable={"תעודת זהות"} className="text"/>
 
     {/* <TextField id="outlined-basic" label="מספר זהות" variant="outlined" /> */}
    
@@ -115,8 +116,8 @@ const NewRegister=(props)=>{
         lable={"הערה"} /> 
        
        <TextArea text="הערה"/>
-
-</div>
+       </div>
+       </div> 
 <Button variant="contained" color="primary" onClick={handleClick}>הוספה למערכת</Button>
 
 </div> }

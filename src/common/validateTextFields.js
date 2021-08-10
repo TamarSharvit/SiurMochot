@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-
+import '../css/newRegister.css';
 const ValidateTextField = (props) => {
     const [value, setValue] = useState('');
     const [isValidateValue, setIsValidateValue] = useState(false);
@@ -28,7 +28,7 @@ const ValidateTextField = (props) => {
     }));
 
     return (
-        <TextField 
+        <TextField className="button1"
             error={isValidateValue}
             id="outlined-error-helper-text"
             id="outlined-basic"

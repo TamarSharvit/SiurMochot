@@ -19,8 +19,9 @@ const AreaOfInterest=(props)=>{
        
 }
 
-      return <div className="div2">
-      <h2>תחום התענינות</h2>
+      return <div className="div1">
+              <div className="div2">
+     
       <ValidateTextField value={priceDiscount}
           onChange={(value) => setPriceDiscount(value)}
           validate={() => { return priceDiscount === '' }}
@@ -59,7 +60,7 @@ const AreaOfInterest=(props)=>{
           lable={"סטטוס"}/>
   <Button variant="contained" color="primary" onClick={handleClick}>הוספה למערכת</Button>
   </div>
-  
+  </div>
   
 }
 

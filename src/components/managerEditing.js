@@ -5,11 +5,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Courses from './courses.js';
 import Models from './models.js';
+import Reporting from './reporting.js';
+import Status from './status.js';
 function Editmaneger(){
 
     const [showCourses, setShowCourses] = useState(false);
     const [showModel, setShowModel] = useState(false);
-    
+    const [showStatus, setShowStatus]=useState(false)
 
     const useStyles = makeStyles((theme) => ({
       root: {
@@ -39,6 +41,12 @@ function Editmaneger(){
    </Fab>
    {showModel&&<Models setShowModel={setShowModel}/>} 
 
+   <br></br><br></br>
+  <lable> עריכת טבלת סטטוס תלמידה</lable>
+     <Fab color="primary" aria-label="add">
+     <AddIcon onClick={()=>{setShowStatus(true)}}/>
+   </Fab>
+   {showStatus&&<Status setShowStatus={setShowStatus}/>} 
 
    
  </div>

@@ -116,7 +116,7 @@ border-radius: 32px;
 .b{
     
 position: absolute;
-left: 96%;
+left: 98%;
 right: 0%;
 top: 0%;
 bottom: 0%;
@@ -126,6 +126,6 @@ bottom: 0%;
 border: 2px solid #E5EBF4;
 box-sizing: border-box;
 border-radius: 24.5px;
-width: 25%;
+width: 15%;
 
 }
