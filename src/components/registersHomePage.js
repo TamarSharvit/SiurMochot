@@ -53,21 +53,34 @@ function RegistersHomePage() {
        {/* <div className="b">
          <button className="buttonB"></button>
        </div> */}
-       <lable>פרטים אישיים</lable>
+       <div className="divUp">
+       <button className="btnUp" >ציר הזמן</button>
+         <button className="btnUp">פרטים ויצירת דיווח</button>
+       </div>
+      {/* <div className="divSide">
+           
+      <lable className="textSide">דשבורד</lable>
+         <br></br>
+         <lable className="textSide">מתענינות</lable>
+         <br></br>
+         <lable className="textSide">תלמידות</lable>
+      </div> */}
+      <br></br><br></br>
+       <lable className="SubjectText">פרטים אישיים</lable>
         <Fab color="primary" aria-label="add">
         <AddIcon onClick={()=>{setShowNewUser(true)}}/>
       </Fab>
      {showNewUser&&<NewRegister setShowNewUser={setShowNewUser}/>} 
       
        <br></br><br></br>
-     <lable>תחום התענינות</lable>
+     <lable className="SubjectText">מסלולי לימוד</lable>
         <Fab color="primary" aria-label="add">
         <AddIcon onClick={()=>{setShowInterest(true)}}/>
       </Fab>
       {showInterest&&<AreaofInterest setShowInterest={setShowInterest}/>} 
 
         <br></br><br></br>
-      <lable>דיווח</lable>
+      <lable className="SubjectText">דיווח</lable>
         <Fab color="primary" aria-label="add">
         <AddIcon onClick={()=>{setreporting(true)}}/>
       </Fab>
