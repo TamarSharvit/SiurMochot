@@ -32,7 +32,7 @@ const Login = () => {
                 const decoded = jwt_decode(res.token)
                 localStorage.setItem("token",decoded);
                 if (res.status === 200)
-                    history.push("/registersHomePage");
+                    history.push("/homePage");
                     else{
                         alert("שם משתמש אינו קיים");
                     }

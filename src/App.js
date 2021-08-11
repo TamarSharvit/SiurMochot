@@ -10,7 +10,8 @@ import NewRegister from './components/newRegister.js';
 import AreaOfInterest from './components/areaOfInterest.js';
 import Reporting from './components/reporting.js';
 import Maneger from './components/managerEditing.js';
-
+import HomePage from './components/homePage.js';
+import Student from './components/studentsHomePage.js';
 function App() {
   return (<div>
 
@@ -42,6 +43,12 @@ function App() {
           </Route>
           <Route path="/maneger">
           <Maneger/>
+          </Route>
+          <Route path="/homePage">
+          <HomePage/>
+          </Route>
+          <Route path="/studentHomePage">
+          <Student/>
           </Route>
        
 
