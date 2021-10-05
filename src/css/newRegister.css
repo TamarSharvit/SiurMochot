@@ -70,7 +70,7 @@ color: #808080;
 
 
 }
-.btn1{
+.bton1{
     /* position: absolute; */
 left: 0%;
 right: 0%;
@@ -82,23 +82,49 @@ box-sizing: border-box;
 border-radius: 19.5px;
 width: 12%;
 height: 15%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 }
-.btn2{
+.btn20{
     left: 0%;
-right: 0%;
-top: 0%;
-bottom: 0%;
-
-/* Elements / status */
-
-background: #FCDD80;
-/* Brand / secondary */
-
-border: 0.7px solid #302A79;
-box-sizing: border-box;
-border-radius: 19.5px;
-width: 12%;
-height: 15%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    
+    /* Elements/status */
+    
+    background: #84EDE6;
+    /* Brand / secondary */
+    
+    border: 0.7px solid #302A79;
+    box-sizing: border-box;
+    border-radius: 19.5px;
+    width: 12%;
+    height: 15%;
+    font-family: Open Sans Hebrew;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 111.68%;
+    /* identical to box height, or 16px */
+    
+    text-align: center;
+    letter-spacing: -0.025em;
+    
+    /* Text / primary */
+    
+    color: #302A79;
 }
 .btn3{
     left: 0%;
@@ -116,6 +142,19 @@ box-sizing: border-box;
 border-radius: 19.5px;
 width: 12%;
 height: 15%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 }
 .btn4{
     left: 0%;
@@ -133,6 +172,19 @@ box-sizing: border-box;
 border-radius: 19.5px;
 width: 12%;
 height: 15%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 }
 .btn5{
     left: 0%;
@@ -146,6 +198,19 @@ background: #FF8DB6;
 border-radius: 19.5px;
 width: 12%;
 height: 15%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 }
 .btn6{
     left: 0%;
@@ -159,12 +224,38 @@ background: #FAFF8F;
 border-radius: 19.5px;
 width: 12%;
 height: 15%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 }
 .btn7{
 left: 0%;
 right: 0%;
 top: 0%;
 bottom: 0%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 
 /* Elements / status */
 
@@ -172,6 +263,19 @@ background: #FFBC8F;
 border-radius: 19.5px;
 width: 12%;
 height: 15%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 }
 .btn8{
     left: 0%;
@@ -185,6 +289,19 @@ background: #9388FF;
 border-radius: 19.5px;
 width: 12%;
 height: 15%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 }
 .btn9{
     left: 0%;
@@ -198,6 +315,19 @@ background: #CCECFF;
 border-radius: 19.5px;
 width: 12%;
 height: 15%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 }
 .btn10{
     left: 0%;
@@ -211,6 +341,19 @@ background: #8DFFC0;
 border-radius: 19.5px;
 width: 12%;
 height: 15%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 }
 
 .btn11{
@@ -225,6 +368,19 @@ background: #FF8D8D;
 border-radius: 19.5px;
 width: 12%;
 height: 15%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 }
 .btn12{
     left: 0%;
@@ -238,6 +394,32 @@ background: #F2F6F9;
 border-radius: 19.5px;
 width: 12%;
 height: 15%;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
+font-family: Open Sans Hebrew;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 111.68%;
+/* identical to box height, or 16px */
+
+text-align: center;
+letter-spacing: -0.025em;
+
+/* Text / primary */
+
+color: #302A79;
 }
 .addSystem{
     left: -973px;
@@ -250,4 +432,17 @@ height: 15%;
      position: relative;
      right: 40%;
     font-size: larger;
+}
+.newbtn{
+    position: absolute;
+left: 0%;
+right: 0%;
+top: 34.04%;
+bottom: 0%;
+
+/* Brand/stroke */
+
+border: 0.5px solid #BEC1CB;
+box-sizing: border-box;
+border-radius: 15.5px;
 }

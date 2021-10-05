@@ -23,12 +23,6 @@ const Reporting=(props)=>{
     props.setreporting(false)
     
   }
-  const func=()=>{
-     
- 
-
-   
-  }
 
       return <div className="div1">
         <div className="div2"> 
@@ -46,9 +40,9 @@ const Reporting=(props)=>{
         <button className="btn6"  onClick={handleClick}>גבית תשלום</button>
         <button className="btn5"  onClick={handleClick}>ממתינה למילגה</button>
         <button className="btn4"  onClick={handleClick}>נקבעה פגישה</button>
-        <button className="btn3"  onClick={handleClick}>נשלחו חומרים</button>
-        <button className="btn2"  onClick={handleClick}>שיחת התענינות</button>
-        <button className="btn1"  onClick={handleClick}>קבלה מידע</button>
+        <button className="btn20"  onClick={handleClick}>נשלחו חומרים</button>
+        <button className="btn3"  onClick={handleClick}>שיחת התענינות</button>
+        <button className="bton1"  onClick={handleClick}>קבלה מידע</button>
          {/* <Button className="button" variant="contained" color="default" onClick={handleClick}>ממתינה למילגה</Button>
          <Button className="button" variant="contained" color="default" onClick={handleClick}>נקבעה פגישה</Button>
          <Button className="button" variant="contained" color="default" onClick={handleClick}>נשלחו חומרים</Button>

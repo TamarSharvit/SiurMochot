@@ -94,3 +94,36 @@ letter-spacing: -0.025em;
 color: #302A79;
 
 }
+.new{
+    display: grid;
+grid-auto-flow: column;
+grid-column-gap: 10px;
+}
+.list{
+    margin-left: 996px;
+   
+}
+.searchStudent{
+    word-spacing: 16px;
+    white-space: nowrap;
+    /* position: absolute; */
+  
+    top: 337px;
+    justify-content: left;
+    left: 801px;
+
+}
+.title{
+    left: -47%;
+    right: 0%;
+    top: 40%;
+    bottom: 0%;
+    background: #FFFFFF;
+    border: 1px solid #BEC1CB;
+    box-sizing: border-box;
+    border-radius: 31px;
+    height: 48px;
+    width: 587px;
+    position: relative;
+
+}

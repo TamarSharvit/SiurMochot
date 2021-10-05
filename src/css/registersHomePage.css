@@ -191,3 +191,18 @@ letter-spacing: -0.025em;
 
 color: #302A79;
 }
+.textUp {
+    position: absolute;
+    left: 72.07%;
+    right: 6.3%;
+    top: 2.82%;
+    bottom: 31.82%;
+    font-family: Open Sans Hebrew;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 111.68%;
+    text-align: right;
+    letter-spacing: -0.025em;
+    color: #302A79;
+}
