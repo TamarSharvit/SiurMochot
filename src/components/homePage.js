@@ -4,6 +4,8 @@ import {useHistory } from 'react-router-dom';
 import GroupIcon from '@material-ui/icons/Group';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+// import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
+
 function HomePage(){
 
     const history = useHistory();
@@ -17,6 +19,9 @@ function HomePage(){
             <button className="btn2" onClick={()=>history.push('/registersHomePage')}>מתענינות   <GroupAddIcon/></button>
             <br></br>
             <button className="btn2" onClick={()=>history.push('./studentHomePage')}>תלמידות    <GroupIcon/></button>
+            <br></br>
+            <button className="btn2" onClick={()=>history.push('./crm')}>CRM    <GroupIcon/></button>
+
 
         </div>
         {/* <div className="divMiddle"></div> */}

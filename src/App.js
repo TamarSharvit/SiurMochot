@@ -12,6 +12,7 @@ import Reporting from './components/reporting.js';
 import Maneger from './components/managerEditing.js';
 import HomePage from './components/homePage.js';
 import Student from './components/studentsHomePage.js';
+import Crm from './components/crm.js';
 function App() {
   return (<div>
 
@@ -49,6 +50,9 @@ function App() {
           </Route>
           <Route path="/studentHomePage">
           <Student/>
+          </Route>
+          <Route path="/crm">
+          <Crm/>
           </Route>
        
 

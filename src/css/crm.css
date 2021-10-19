@@ -1,0 +1,40 @@
+.upDiv{
+    width: 1500px;
+    height: 60px;
+    top: 305px;
+    background: #FFFFFF;
+    box-shadow: 2px 14px 21px rgb(87 61 211 / 10%);
+    border-radius: 41px;
+}
+.upDiv2{
+    width: 1500px;
+    height: 145px;
+    top: 305px;
+    background: #FFFFFF;
+    box-shadow: 2px 14px 21px rgb(87 61 211 / 10%);
+    border-radius: 41px;
+}
+.upDiv3{
+    width: 1500px;
+    height: 600px;
+    top: 305px;
+    background: #FFFFFF;
+    box-shadow: 2px 14px 21px rgb(87 61 211 / 10%);
+    border-radius: 41px;
+}
+.listCrm{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    
+    /* Text / secondary */
+    
+    background: #FFFFFF;
+    /* Brand/stroke */
+    
+    border: 1px solid #BEC1CB;
+    box-sizing: border-box;
+    border-radius: 31px;
+}
