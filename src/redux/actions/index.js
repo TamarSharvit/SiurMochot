@@ -1,15 +1,4 @@
-// export const selectStudent=(student)=>{
-//     return{
-//         type:"SELECT_STUDENT",
-//         payload: student
-//     };
-// };
 
-// export const studentsList=()=>{
-//     return{
-//         type:"STUDENTS_LIST"
-//     };
-// };
 
 function convertActionNameToType(actionName) {
     let myActionName= actionName.replace(/([A-Z])/g, "_$1").toUpperCase();

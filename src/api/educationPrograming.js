@@ -1,5 +1,6 @@
-export const studentsFromServer = (secretary) => {
-    return fetch(`http://localhost:4000/personalInformation/show/${secretary}`)
+
+export const allEducationProgram = () => {
+    return fetch(`http://localhost:4000/educationPrograming/`)
 
         .then((res) => res.json())
         .then((data) => {
@@ -12,7 +13,3 @@ export const studentsFromServer = (secretary) => {
         });
 
 }
-
-
-
-

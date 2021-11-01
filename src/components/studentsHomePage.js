@@ -70,11 +70,11 @@ const Students=()=>{
            })
         },[])
 
-     
 
     
     return<div>
-
+       
+    
         <div className="upDiv" ><lable className="textUp">תלמידות</lable>
   
         </div><br></br>

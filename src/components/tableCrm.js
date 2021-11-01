@@ -1,21 +1,23 @@
-import React ,{useEffect, useState}from 'react'
+import React ,{useEffect, useState}from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux';
 import {allStudentsFromServer} from '../api/personalInformation'
 import {actions} from '../redux/actions/index'
 const DataTable=()=>{
 
-const studentsList=useSelector(state=> state.studentList.studentList );
+const studentsList=useSelector(state=> state.studentList.studentsList );
 const dispatch=useDispatch();
-
+const [rows, setRows]=useState([]);
 useEffect(()=>{
-    if(studentsList!=[]){
-    allStudentsFromServer().then(res=> dispatch(actions.loadList(res)));
-    }
+ 
+    allStudentsFromServer().then(res=>dispatch(actions.loadList(res)));
+    console.log(studentsList[0].firrstName);
+    
  },[])
 
 
-const [rows, setRows]=useState([{}]);
+
+
 const columns = [
     {
         field: 'id',
@@ -56,13 +58,13 @@ const columns = [
     {
       field: 'address',
       headerName: 'כתובת',
-      width: 110,
+      width: 200,
       editable: true,
     },
     {
       field: 'city',
       headerName: 'עיר',
-      width: 110,
+      width: 200,
       editable: true,
     },
     {
@@ -84,23 +86,30 @@ const columns = [
       editable: true,
     },
   ];
+ 
 
+    
+  
+ 
 // const rows=[  {id:1, fullName: 'hhh', phone:'0000', email: 'Jon', address:'sss', city:'hhh', branch:'hhh' , yearOfLearning:'dd',note:'yy'}
 // ]
+
+  
+useEffect(()=>{
+  showList();
+},studentsList);
+
 const showList=()=>{ 
-    console.log('ddd');
-     studentsList.map(i=>{
-        
-     setRows([...rows,{id:1, fullName: i.firstName, phone:'0000', email: 'Jon', address:'sss', city:'hhh', branch:'hhh' , yearOfLearning:'dd',note:'yy'}]);
+  console.log('ddd');
+  console.log(studentsList[0].address);
+   studentsList.map(i=>{
+      
+   setRows([...rows,{id:i, fullName: 'hhh', phone:'0000', email: 'Jon', address:'sss', city:'hhh', branch:'hhh' , yearOfLearning:'dd',note:'yy'}]);
 })
 }
-  
-
-
-
   return <div>
 
-    {showList()};
+    {/* {showList()}; */}
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
       

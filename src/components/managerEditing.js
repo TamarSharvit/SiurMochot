@@ -7,7 +7,7 @@ import Courses from './courses.js';
 import Models from './models.js';
 import Reporting from './reporting.js';
 import Status from './status.js';
-function Editmaneger(){
+const Editmaneger=()=>{
 
     const [showCourses, setShowCourses] = useState(false);
     const [showModel, setShowModel] = useState(false);

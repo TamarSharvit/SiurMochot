@@ -42,9 +42,7 @@ function RegistersHomePage() {
     //     history.push("/reporting");
     // }
     const history = useHistory();
-    const handleClick=()=>{
-      history.push("/maneger");
-    }
+  
 
             {/* <TextField id="standard-search" label="חיפוש תלמידה" type="search" /> */}
 
@@ -86,7 +84,7 @@ function RegistersHomePage() {
       </Fab>
        {reporting&&<Reporting setreporting={setreporting}/>} 
         <br></br><br></br>
-        <Button variant="contained" color="primary" onClick={handleClick}> עריכת טבלאות- הרשאת מנהל</Button>
+        
       
     </div>
 

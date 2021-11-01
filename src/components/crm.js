@@ -6,13 +6,14 @@ import {actions} from '../redux/actions/index'
 import DataTable from './tableCrm';
 const Crm=()=>{
     // useEffect(()=>{
+
     //     if(studentsList!=[]){
     //     allStudentsFromServer().then(res=> dispatch(actions.loadList(res)));
     //     }
     //  },[])
 
-    const studentsList=useSelector(state=> state.studentList.studentList );
-    // const dispatch=useDispatch();
+    const studentsList=useSelector(state=> state.studentList.studentsList );
+    const dispatch=useDispatch();
     return <div>
          <div className="upDiv" ><lable className="textUp">CRM</lable>
   
@@ -27,4 +28,4 @@ const Crm=()=>{
 
    </div> 
 }
-export default Crm;
+export default Crm; 
