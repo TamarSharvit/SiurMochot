@@ -5,7 +5,7 @@ import educationProgramListReducer from './educationProgramListReducer';
 const appReducers= combineReducers({
     studentList:studentListReducer,
     selectedStudent:selectedStudentReducer,
-    educationProgramList:educationProgramListReducer
+    educationProgramList:educationProgramListReducer,
 });
 
 export default appReducers;

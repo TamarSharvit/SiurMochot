@@ -26,7 +26,6 @@ const Reporting=(props)=>{
 
       return <div className="div1">
         <div className="div2"> 
-         <TextField id="standard-basic" label="הקישי ת.ז לחיפוש" />
          <h5>סטטוס דיווח</h5>
      
         

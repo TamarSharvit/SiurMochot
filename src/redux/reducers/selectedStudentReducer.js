@@ -1,17 +1,15 @@
 import produce from 'immer';
 import createReducer from "./reducerUtil";
-const initialState={
-    selectedStudent:""
+const initialState = {
+    selectedStudent: {}
 }
-    
 
-const selectedStudentReducer={
-    loadList(state, action){
-        if(action.type==='SELECT_STUDENT') 
-        return action.payload;
-      return state.selectedStudent;
+
+const selectedStudentReducer = {
+    loadStudent(state, action) {
+        state.selectedStudent = action.payload;
     }
-    
+
 
 }
-export default produce((state, action)=>createReducer(state, action, selectedStudentReducer),initialState);
+export default produce((state, action) => createReducer(state, action, selectedStudentReducer), initialState);

@@ -27,10 +27,7 @@ const Students=()=>{
   useEffect(()=>{
 
         coursesFromServer().then((res) => {
-            // console.log("res.status", res.status)
-            // console.log("tokennn", res.token)
-            //  const decoded = jwt_decode(res.token)
-            //  localStorage.setItem("token",decoded);
+
              if (res.status === 200){
                  
                setArrC(res.coursess)

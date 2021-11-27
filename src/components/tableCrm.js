@@ -1,39 +1,102 @@
-import React ,{useEffect, useState}from 'react';
+import React, { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux';
-import {allStudentsFromServer} from '../api/personalInformation'
-import {actions} from '../redux/actions/index'
-const DataTable=()=>{
-
-const studentsList=useSelector(state=> state.studentList.studentsList );
-const dispatch=useDispatch();
-const [rows, setRows]=useState([]);
-useEffect(()=>{
- 
-    allStudentsFromServer().then(res=>dispatch(actions.loadList(res)));
-    console.log(studentsList[0].firrstName);
-    
- },[])
-
+import { allStudentsFromServer } from '../api/personalInformation'
+import { actions } from '../redux/actions/index'
+import { connect } from 'react-redux';
+const DataTable = (props) => {
+  const [currentStudent, setCurrentStudent] = useState("");
+  // const {studentsList}=props
+  // const studentsList=useSelector(state=> state.studentList.studentsList );
+  const studentsList = useSelector(state => state.studentList.studentList);
+  const dispatch = useDispatch();
+  const handleClick1 = (e) => {
+    setCurrentStudent(e);
+    console.log("evevnr bdjbjnjn", currentStudent);
 
 
+  }
 
-const columns = [
+
+  useEffect(() => {
+    allStudentsFromServer().then((res) => {
+      dispatch(actions.loadList(res));
+
+    })
+  }, [])
+
+
+
+
+  const columns = [
     {
-        field: 'id',
-        headerName: 'id',
-        description: 'This column has a value getter and is not sortable.',
-        sortable: false,
-        width: 160,
-        // valueGetter: (params) =>
-        //   `${params.getValue(params.id, 'firstName') || ''} ${
-        //     params.getValue(params.id, 'lastName') || ''
-        //   }`,
-      },
-
+      field: 'note',
+      headerName: 'הערה',
+      width: 160,
+      editable: true,
+    },
+    // {
+    //   field: 'yearOfLearning',
+    //   headerName: 'שנת לימוד',
+    //   width: 110,
+    //   editable: true,
+    // },
+    // {
+    //   field: 'branch',
+    //   headerName: 'סניף',
+    //   width: 110,
+    //   editable: true,
+    // },
     {
-      field: 'fullName',
-      headerName: 'שם',
+      field: 'city',
+      headerName: 'עיר',
+      width: 110,
+      editable: true,
+    },
+    {
+      field: 'address',
+      headerName: 'כתובת',
+      width: 140,
+      editable: true,
+    },
+    {
+      field: 'email',
+      headerName: 'מייל',
+      width: 140,
+      editable: true,
+    },
+    {
+      field: 'phone',
+      headerName: 'טלפון',
+      // type: 'number',
+      width: 110,
+      editable: true,
+    },
+    {
+      field: 'lastName',
+      headerName: ' שם משפחה',
+      description: 'This column has a value getter and is not sortable.',
+      sortable: true,
+      width: 140,
+      // valueGetter: (params) =>
+      //   `${params.getValue(params.id, 'firstName') || ''} ${
+      //     params.getValue(params.id, 'lastName') || ''
+      //   }`,
+    },
+    {
+      field: 'firstName',
+      headerName: 'שם פרטי',
+      description: 'This column has a value getter and is not sortable.',
+      sortable: true,
+      width: 110,
+      // valueGetter: (params) =>
+      //   `${params.getValue(params.id, 'firstName') || ''} ${
+      //     params.getValue(params.id, 'lastName') || ''
+      //   }`,
+    },
+    {
+      field: 'id',
+      headerName: 'id',
       description: 'This column has a value getter and is not sortable.',
       sortable: false,
       width: 160,
@@ -42,85 +105,28 @@ const columns = [
       //     params.getValue(params.id, 'lastName') || ''
       //   }`,
     },
-      {
-      field: 'phone',
-      headerName: 'טלפון',
-      // type: 'number',
-      width: 110,
-      editable: true,
-    },
-    {
-      field: 'email',
-      headerName: 'מייל',
-      width: 110,
-      editable: true,
-    },
-    {
-      field: 'address',
-      headerName: 'כתובת',
-      width: 200,
-      editable: true,
-    },
-    {
-      field: 'city',
-      headerName: 'עיר',
-      width: 200,
-      editable: true,
-    },
-    {
-      field: 'branch',
-      headerName: 'סניף',
-      width: 110,
-      editable: true,
-    },
-    {
-      field: 'yearOfLearning',
-      headerName: 'שנת לימוד',
-      width: 110,
-      editable: true,
-    },
-    {
-      field: 'note',
-      headerName: 'הערה',
-      width: 110,
-      editable: true,
-    },
   ];
- 
 
-    
-  
- 
-// const rows=[  {id:1, fullName: 'hhh', phone:'0000', email: 'Jon', address:'sss', city:'hhh', branch:'hhh' , yearOfLearning:'dd',note:'yy'}
-// ]
 
-  
-useEffect(()=>{
-  showList();
-},studentsList);
-
-const showList=()=>{ 
-  console.log('ddd');
-  console.log(studentsList[0].address);
-   studentsList.map(i=>{
-      
-   setRows([...rows,{id:i, fullName: 'hhh', phone:'0000', email: 'Jon', address:'sss', city:'hhh', branch:'hhh' , yearOfLearning:'dd',note:'yy'}]);
-})
-}
   return <div>
 
-    {/* {showList()}; */}
-    <div style={{ height: 400, width: '100%' }}>
+    <div style={{ height: 800, width: '100%' }}>
       <DataGrid
-      
-        rows={rows}
+        rows={studentsList}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        checkboxSelection
+        checkboxSelection onRowClick={(e) => { setCurrentStudent(e.firstName);console.log("ddeide", currentStudent); }}
+
       />
     </div>
-   </div>
+    {/* {studentsList[0].firstName} */}
+  </div>
 
 }
+// export default connect(mapStateToProps)(DataTable);
 export default DataTable;
+
+// const mapStateToProps=(state)=>{
+//   return {studentsList:state.studentList.studentList}
+// }

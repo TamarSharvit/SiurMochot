@@ -1,12 +1,12 @@
 import produce from 'immer';
 import createReducer from "./reducerUtil";
 const initialState={
-    studentsList:[]
+    studentList:[]
 }
 
 const studentListReducer={
     loadList(state, action){
-       state.studentsList=action.payload;
+       state.studentList=action.payload;
    
    
     }
