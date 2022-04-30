@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
 import ValidateTextField from '../common/validateTextFields';
-import { addRegisterToData } from '../api/newRegisterApi';
+import { addPersonalInformation } from '../api/personalInformation';
 import TextArea from './textArea.js';
 const NewRegister=(props)=>{
     //פרטי תלמידה
@@ -20,10 +20,13 @@ const NewRegister=(props)=>{
     const [foreignBirthDate, setForeignBirthDate] = useState('');
     const [hebrowBirthDate, setHebrowBirthDate] = useState('');
     const [note, setNote] = useState('');
-
+    const[address, setAddress]=useState("");
+    const[city, setCity]=useState('');
+    const[dateOfEntry, setDateOfEntry]=useState('');
+    const[secretary, setSecretary]=useState('');
     const handleClick = () => {
         debugger;
-        addRegisterToData(id, fName, lName, email, phone, sex, leadSource, additionalPhone, foreignBirthDate , hebrowBirthDate, note );
+        addPersonalInformation(lName, fName, id, sex, hebrowBirthDate, foreignBirthDate, phone, additionalPhone, email, address, city, leadSource, note, dateOfEntry, secretary);
         props.setShowNewUser(false);
 
        
@@ -114,8 +117,33 @@ const NewRegister=(props)=>{
         validate={() => { return note === '' }}
         errorMessage={'שדה חובה'}
         lable={"הערה"} /> 
+
+         <ValidateTextField value={address}
+        onChange={(value) => setAddress(value)}
+        validate={() => { return address === '' }}
+        errorMessage={'שדה חובה'}
+        lable={"כתובת"} /> 
+
+
+<ValidateTextField value={city}
+        onChange={(value) => setCity(value)}
+        validate={() => { return city === '' }}
+        errorMessage={'שדה חובה'}
+        lable={"עיר"} /> 
+
+ <ValidateTextField value={dateOfEntry}
+        onChange={(value) => setDateOfEntry(value)}
+        validate={() => { return dateOfEntry === '' }}
+        errorMessage={'שדה חובה'}
+        lable={"תאריך כניסה"} /> 
+
+<ValidateTextField value={secretary}
+        onChange={(value) => setSecretary(value)}
+        validate={() => { return secretary === '' }}
+        errorMessage={'שדה חובה'}
+        lable={"רשמת"} /> 
        
-       <TextArea text="הערה"/>
+       {/* <TextArea text="הערה"/> */}
        </div>
        </div> 
 <Button variant="contained" color="primary" onClick={handleClick}>הוספה למערכת</Button>

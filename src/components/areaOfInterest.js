@@ -9,6 +9,7 @@ import { statusFromServer } from '../api/statusMongoose';
 import { coursesFromServer } from '../api/coursesMongoose';
 import { branchFromServer } from '../api/branchApi';
 import { DropDownCourse, DropDownUsers, DropDownStatus, DropDownBranch } from './dropDownBtn.js';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const AreaOfInterest = (props) => {
@@ -29,6 +30,8 @@ const AreaOfInterest = (props) => {
         const [yearOfLearning, setYearOfLearning] = useState('');
         const [paidInSystem, setPaidInSystem] = useState('');
         const [contract, setContract] = useState(false);
+        const [studentId, setStudentId] = useState("");
+        // setStudentId(useSelector(state => state.selectedStudent.id));
 
         useEffect(() => {
                 statusFromServer().then((res) => {
@@ -131,6 +134,11 @@ const AreaOfInterest = (props) => {
                                 validate={() => { return paidInSystem === '' }}
                                 errorMessage={'שדה חובה'}
                                 lable={"שולם במערכת"} />
+                        {/* <ValidateTextField value={studentId}
+                                onChange={(value) => setPaidInSystem(value)}
+                                validate={() => { return studentId === '' }}
+                                errorMessage={'שדה חובה'}
+                                lable={"תעודת זהות"} /> */}
                         <br /><br />
                         <lable>חוזה</lable>  <ControlledCheckbox />
                         <br /><br />

@@ -12,14 +12,16 @@ import MaterialUIPickers from './MaterialUIPickers.js';
 import TextField from '@material-ui/core/TextField';
 const Reporting=(props)=>{
   const [clicked, setClick] = useState(false);
-
+  const [kindOfReport, setKindOfReport]=useState("");
+  const [common, setCommon]=useState("");
   // this.handleClick = this.handleClick.bind(this);
-  const handleClick=()=>{
-  
+  const handleClick=(e)=>{
+    setKindOfReport(e.target.innerText)
+    console.log("jjjj", e.target.innerText);
     
   }
   const handleClick2=()=>{
-    // addReportingToData()
+     addReportingToData(kindOfReport,common)
     props.setreporting(false)
     
   }
@@ -58,7 +60,7 @@ const Reporting=(props)=>{
           
          {/* <TextArea text="פירוט דיווח"/> */}
          <h5>פירוט דיווח</h5>
-         <input className="report" type="text"/> 
+         <input className="report" type="text" onChange={(e)=>{setCommon(e.target.value)}}/> 
          <LockOpenIcon className="date" fontSize="large"/> 
          <LockIcon className="date" fontSize="large"/> 
          <br></br>

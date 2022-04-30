@@ -33,13 +33,14 @@ const Crm = () => {
         <div className="upDiv3">
 
             {/* <DataTable /> */}
-            <DataTable/>
+           
             <Link
             component="button"
             variant="body2"
             onClick={handleCkick}
         > לעריכת התלמידה
           </Link>
+           <DataTable/>
         </div>
 
         

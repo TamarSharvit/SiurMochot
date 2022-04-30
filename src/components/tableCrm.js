@@ -5,17 +5,9 @@ import { allStudentsFromServer } from '../api/personalInformation'
 import { actions } from '../redux/actions/index'
 import { connect } from 'react-redux';
 const DataTable = (props) => {
-  const [currentStudent, setCurrentStudent] = useState("");
-  // const {studentsList}=props
-  // const studentsList=useSelector(state=> state.studentList.studentsList );
   const studentsList = useSelector(state => state.studentList.studentList);
+  const currentStudent = useSelector(state => state.selectedStudent);
   const dispatch = useDispatch();
-  const handleClick1 = (e) => {
-    setCurrentStudent(e);
-    console.log("evevnr bdjbjnjn", currentStudent);
-
-
-  }
 
 
   useEffect(() => {
@@ -116,11 +108,11 @@ const DataTable = (props) => {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        checkboxSelection onRowClick={(e) => { setCurrentStudent(e.firstName);console.log("ddeide", currentStudent); }}
+        checkboxSelection onRowClick={(e) => { dispatch(actions.loadStudent(e.row)); console.log("the redux", currentStudent.selectedStudent.id); }}
 
       />
+     
     </div>
-    {/* {studentsList[0].firstName} */}
   </div>
 
 }

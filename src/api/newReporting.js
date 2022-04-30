@@ -6,7 +6,7 @@ export const addReportingToData = (type, comment) => {
         headers: {
             'Content-Type': 'application/json'
           },
-        body: JSON.stringify({ })
+        body: JSON.stringify({ type, comment})
     })
         .then(() => {console.log("you add") })
         .catch((err) => {
